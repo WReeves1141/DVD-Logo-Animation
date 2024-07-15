@@ -71,7 +71,7 @@ try:
 
         if check_corner():
             count += 1
-            Counter.increase_counter(counter=count)
+            counter.increase_counter(counter=count)
 
         # Changes y-coordinate when the DVD reaches a horizontal border.
         if (dvd.ycor() > screen_height - 20 or

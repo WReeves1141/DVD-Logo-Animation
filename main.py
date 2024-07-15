@@ -28,17 +28,17 @@ def check_corner() -> bool:
     """Checks if the dvd logo hit the corner."""
     global screen_width, screen_height
 
-    if (dvd.xcor() == screen_height - 20 and
-            dvd.ycor() == screen_width - 20):
+    if (dvd.xcor() == screen_width - 40 and
+            dvd.ycor() == screen_height - 20):
         is_corner = True    # (+, +) Top right corner.
-    elif (dvd.xcor() == screen_height * -1 + 20 and
-          dvd.ycor() == screen_width - 20):
+    elif (dvd.xcor() == screen_width * -1 + 40 and
+          dvd.ycor() == screen_height - 20):
         is_corner = True    # (-, +) Top left corner.
-    elif (dvd.xcor() == screen_height * -1 + 20 and
-          dvd.ycor() == screen_width * -1 + 20):
+    elif (dvd.xcor() == screen_width * -1 + 40 and
+          dvd.ycor() == screen_height * -1 + 20):
         is_corner = True    # (-, -) Bottom left corner.
-    elif (dvd.xcor() == screen_height - 20 and
-          dvd.ycor() == screen_width * -1 + 20):
+    elif (dvd.xcor() == screen_width - 40 and
+          dvd.ycor() == screen_height * -1 + 20):
         is_corner = True    # (+, -) Bottom right corner.
     else:
         is_corner = False
@@ -51,8 +51,8 @@ counter = Counter()
 dvd = Dvd()
 
 # Creates the screen object.
-screen_width = 400
-screen_height = 200
+screen_width = 920
+screen_height = 490
 screen = Screen()
 screen.bgcolor("black")
 screen.setup(width=screen_width * 2, height=screen_height * 2)
@@ -74,13 +74,13 @@ try:
             counter.increase_counter(counter=count)
 
         # Changes y-coordinate when the DVD reaches a horizontal border.
-        if (dvd.ycor() > screen_height - 20 or
-                dvd.ycor() < (screen_height * -1) + 20):
+        if (dvd.ycor() > screen_height - 60 or
+                dvd.ycor() < screen_height * -1):
             dvd.change_y()
 
         # Changes x-coordinate when the DVD reaches a vertical borders.
-        if (dvd.xcor() > screen_width - 20 or
-                dvd.xcor() < (screen_width * -1) + 20):
+        if (dvd.xcor() > screen_width - 60 or
+                dvd.xcor() < (screen_width * -1) + 60):
             dvd.change_x()
 
 except KeyboardInterrupt:

@@ -66,7 +66,7 @@ try:
     while is_active:
         dvd.move()
         dvd.write_text()
-        sleep(0.1)
+        sleep(0.05)
         screen.update()
 
         if check_corner():

@@ -43,7 +43,7 @@ class Dvd(Turtle):
 
     def write_text(self) -> None:
         """Displays DVD logo to the screen."""
-        self.write("DVD", align="center", font=("Comic Sans", 48, "bold"))
+        self.write("DVD", align="center", font=("Comic Sans", 64, "bold"))
 
     def new_color(self, current) -> None:
         """Changes the current DVD logo color."""
